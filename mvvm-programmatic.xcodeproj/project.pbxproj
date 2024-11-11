@@ -6,12 +6,30 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		DEDF5A272CE1DA3E00A74EBA /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = DEDF5A262CE1DA3E00A74EBA /* Alamofire */; };
+		DEDF5A692CE217D800A74EBA /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = DEDF5A682CE217D800A74EBA /* Kingfisher */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		DEDF5A412CE1DDE400A74EBA /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		DEDF59A42CE1D48800A74EBA /* mvvm-programmatic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "mvvm-programmatic.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		DEDF59B62CE1D48A00A74EBA /* Exceptions for "mvvm-programmatic" folder in "mvvm-programmatic" target */ = {
+		DEDF5A802CE23FE400A74EBA /* Exceptions for "mvvm-programmatic" folder in "mvvm-programmatic" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
 				Info.plist,
@@ -24,7 +42,7 @@
 		DEDF59A62CE1D48800A74EBA /* mvvm-programmatic */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
-				DEDF59B62CE1D48A00A74EBA /* Exceptions for "mvvm-programmatic" folder in "mvvm-programmatic" target */,
+				DEDF5A802CE23FE400A74EBA /* Exceptions for "mvvm-programmatic" folder in "mvvm-programmatic" target */,
 			);
 			path = "mvvm-programmatic";
 			sourceTree = "<group>";
@@ -36,6 +54,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DEDF5A692CE217D800A74EBA /* Kingfisher in Frameworks */,
+				DEDF5A272CE1DA3E00A74EBA /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -68,6 +88,7 @@
 				DEDF59A02CE1D48800A74EBA /* Sources */,
 				DEDF59A12CE1D48800A74EBA /* Frameworks */,
 				DEDF59A22CE1D48800A74EBA /* Resources */,
+				DEDF5A412CE1DDE400A74EBA /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -78,6 +99,8 @@
 			);
 			name = "mvvm-programmatic";
 			packageProductDependencies = (
+				DEDF5A262CE1DA3E00A74EBA /* Alamofire */,
+				DEDF5A682CE217D800A74EBA /* Kingfisher */,
 			);
 			productName = "mvvm-programmatic";
 			productReference = DEDF59A42CE1D48800A74EBA /* mvvm-programmatic.app */;
@@ -107,6 +130,10 @@
 			);
 			mainGroup = DEDF599B2CE1D48800A74EBA;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				DEDF5A252CE1DA3E00A74EBA /* XCRemoteSwiftPackageReference "Alamofire" */,
+				DEDF5A672CE217D800A74EBA /* XCRemoteSwiftPackageReference "Kingfisher" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = DEDF59A52CE1D48800A74EBA /* Products */;
 			projectDirPath = "";
@@ -333,6 +360,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		DEDF5A252CE1DA3E00A74EBA /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.10.1;
+			};
+		};
+		DEDF5A672CE217D800A74EBA /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 8.1.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		DEDF5A262CE1DA3E00A74EBA /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DEDF5A252CE1DA3E00A74EBA /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+		DEDF5A682CE217D800A74EBA /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DEDF5A672CE217D800A74EBA /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = DEDF599C2CE1D48800A74EBA /* Project object */;
 }
