@@ -42,7 +42,6 @@ class UsersTableViewCell: UITableViewCell {
             nameLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 8),
             nameLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16),
             nameLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16),
-            
             emailLabel.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: 8),
             emailLabel.leadingAnchor.constraint(equalTo: nameLabel.leadingAnchor),
             emailLabel.trailingAnchor.constraint(equalTo: nameLabel.trailingAnchor),

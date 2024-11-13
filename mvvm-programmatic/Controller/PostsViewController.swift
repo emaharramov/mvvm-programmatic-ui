@@ -11,6 +11,14 @@ class PostsViewController: UIViewController, UITableViewDelegate, UITableViewDat
 
     let postViewModel = PostsViewModel()
     
+    private lazy var tableView: UITableView = {
+        let tableView = UITableView()
+        tableView.translatesAutoresizingMaskIntoConstraints = false
+        tableView.delegate = self
+        tableView.dataSource = self
+        return tableView
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Posts"
@@ -43,14 +51,6 @@ class PostsViewController: UIViewController, UITableViewDelegate, UITableViewDat
             self.tableView.reloadData()
         }
     }
-    
-    private lazy var tableView: UITableView = {
-        let tableView = UITableView()
-        tableView.translatesAutoresizingMaskIntoConstraints = false
-        tableView.delegate = self
-        tableView.dataSource = self
-        return tableView
-    }()
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return postViewModel.posts.count

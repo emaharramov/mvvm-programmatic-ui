@@ -10,6 +10,14 @@ import UIKit
 class UsersViewController: UIViewController, UITableViewDelegate,UITableViewDataSource {
     
     let userViewModel = UsersViewModel()
+
+    private lazy var tableView: UITableView = {
+        let tableView = UITableView()
+        tableView.translatesAutoresizingMaskIntoConstraints = false
+        tableView.delegate = self
+        tableView.dataSource = self
+        return tableView
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,16 +51,7 @@ class UsersViewController: UIViewController, UITableViewDelegate,UITableViewData
             self.tableView.reloadData()
         }
     }
-    
-    private lazy var tableView: UITableView = {
-        let tableView = UITableView()
-        tableView.translatesAutoresizingMaskIntoConstraints = false
-        tableView.delegate = self
-        tableView.dataSource = self
-        return tableView
-    }()
-    
-    
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return userViewModel.users.count
     }

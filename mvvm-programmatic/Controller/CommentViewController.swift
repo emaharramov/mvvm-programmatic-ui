@@ -11,6 +11,13 @@ class CommentViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     var id: Int?
     var viewModel = CommentsViewModel()
+    private lazy var tableView: UITableView = {
+        let tableView = UITableView()
+        tableView.translatesAutoresizingMaskIntoConstraints = false
+        tableView.delegate = self
+        tableView.dataSource = self
+        return tableView
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,15 +51,6 @@ class CommentViewController: UIViewController, UITableViewDelegate, UITableViewD
         }
 
     }
-    
-    
-    private lazy var tableView: UITableView = {
-        let tableView = UITableView()
-        tableView.translatesAutoresizingMaskIntoConstraints = false
-        tableView.delegate = self
-        tableView.dataSource = self
-        return tableView
-    }()
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return viewModel.comments.count

@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class PhotosTableViewCell: UITableViewCell {
     
@@ -58,13 +59,8 @@ class PhotosTableViewCell: UITableViewCell {
     }
 
     private func loadImage(from url: String) {
-        guard let imageURL = URL(string: url) else { return }
-        URLSession.shared.dataTask(with: imageURL) { [weak self] data, response, error in
-            if let data = data, let image = UIImage(data: data) {
-                DispatchQueue.main.async {
-                    self?.imageField.image = image
-                }
-            }
-        }.resume()
+        guard let imageUrl = URL(string: url) else { return }
+        imageField.kf.setImage(with: imageUrl)
     }
+
 }

@@ -65,6 +65,7 @@ class PhotoDetailController: UIViewController {
         ])
     }
     
+    
     func loadImage(from urlString: String?) {
         guard let urlString = urlString, let url = URL(string: urlString) else { return }
         

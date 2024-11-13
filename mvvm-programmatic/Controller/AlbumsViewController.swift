@@ -10,6 +10,15 @@ import UIKit
 class AlbumsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     let albumViewModel = AlbumsViewModel()
+    
+    private lazy var tableView: UITableView = {
+        let tableView = UITableView()
+        tableView.translatesAutoresizingMaskIntoConstraints = false
+        tableView.delegate = self
+        tableView.dataSource = self
+        return tableView
+    }()
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,15 +52,6 @@ class AlbumsViewController: UIViewController, UITableViewDelegate, UITableViewDa
             self.tableView.reloadData()
         }
     }
-    
-    private lazy var tableView: UITableView = {
-        let tableView = UITableView()
-        tableView.translatesAutoresizingMaskIntoConstraints = false
-        tableView.delegate = self
-        tableView.dataSource = self
-        return tableView
-    }()
-
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return albumViewModel.album.count

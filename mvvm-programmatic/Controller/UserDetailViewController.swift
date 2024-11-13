@@ -11,6 +11,13 @@ class UserDetailViewController: UIViewController, UITableViewDelegate, UITableVi
     var id: Int?
     var userName: String?
     var viewModel = UserDetailViewModel()
+    private lazy var tableView: UITableView = {
+        let tableView = UITableView()
+        tableView.translatesAutoresizingMaskIntoConstraints = false
+        tableView.delegate = self
+        tableView.dataSource = self
+        return tableView
+    }()
     
     let indicator: UIActivityIndicatorView = {
         let indicator = UIActivityIndicatorView(style: .large)
@@ -66,14 +73,6 @@ class UserDetailViewController: UIViewController, UITableViewDelegate, UITableVi
             self.indicator.isHidden = true
         }
     }
-
-    private lazy var tableView: UITableView = {
-        let tableView = UITableView()
-        tableView.translatesAutoresizingMaskIntoConstraints = false
-        tableView.delegate = self
-        tableView.dataSource = self
-        return tableView
-    }()
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return viewModel.userdetail != nil ? 1 : 0
